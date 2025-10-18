@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mission_Elliot</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="site-title-block">
+        <h1 class="site-title">Mission_Elliot</h1>
+        <p class="site-bio" id="bio">[Your bio here — edit this text]</p>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Gallery</a>
+        <a href="#" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="gallery-section">
+      <div class="grid" id="photo-grid">
+        <!-- Example items — duplicate and edit the anchor href and image/src for your content -->
+        
+	<article class="grid-item">
+          <a href="posts/post-01.html" class="thumb-link">
+            <img src="images/thumb-01.jpg" alt="Thumbnail 1" loading="lazy">
+            <div class="overlay">
+              <span class="overlay-text">View</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="grid-item">
+          <a href="posts/post-02.html" class="thumb-link">
+            <img src="images/thumb-02.jpg" alt="Thumbnail 2" loading="lazy">
+            <div class="overlay">
+              <span class="overlay-text">View</span>
+            </div>
+          </a>
+        </article>
+
+	<article class="grid-item">
+          <a href="posts/post-03.html" class="thumb-link">
+            <img src="images/thumb-03.jpg" alt="Thumbnail 3" loading="lazy">
+            <div class="overlay">
+              <span class="overlay-text">View</span>
+            </div>
+          </a>
+        </article>
+
+
+        <!-- Add more grid items here -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Mission_Elliot — All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Small nicety: set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
