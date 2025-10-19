@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post 1 — Elliot Létourneau</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* CSS minimal pour le carrousel */
+    .carousel {
+      position: relative;
+      margin: 2rem 0;
+    }
+
+    .carousel img {
+      width: 100%;
+      display: none;
+      border-radius: 8px;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .carousel button.prev,
+    .carousel button.next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.7);
+      border: none;
+      font-size: 2rem;
+      padding: 0.2rem 0.6rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .carousel button.prev { left: 10px; }
+    .carousel button.next { right: 10px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title"><a href="../index.html">Elliot Létourneau</a></h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>CÉGEP 2022-2025</h2>
+
+    <!-- CARROUSEL -->
+    <div class="carousel">
+      <button class="prev">‹</button>
+      <img src="../images/post8-1.jpg" class="active" alt="Photo 1">
+      <img src="../images/post8-2.jpg" alt="Photo 2">
+      <img src="../images/post8-3.jpg" alt="Photo 3">
+      <button class="next">›</button>
+    </div>
+
+    <p>
+
+Attentes: faibles<br>
+Résultats: énormes<br>
+<br>
+Projet final de Techniques de Génie Mécanique: Le Véloto, un vélo électrique à 4 roues<br>
+<br>
+Le cégep c’est quand même cool quand tu ne fais pas un pré-u</p>
+<br>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Elliot Létourneau</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Carrousel JS
+    const carousel = document.querySelector(".carousel");
+    const images = carousel.querySelectorAll("img");
+    const prev = carousel.querySelector(".prev");
+    const next = carousel.querySelector(".next");
+    let currentIndex = 0;
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.toggle("active", i === index);
+      });
+    }
+
+    prev.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+
+    next.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+
+    // Initialisation
+    showImage(currentIndex);
+  </script>
+</body>
+</html>
