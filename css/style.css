@@ -1,158 +1,149 @@
-/* Mission_Elliot - warm/minimal chalet style */
-/* Use system fonts for speed and privacy */
-:root{
-  --bg: #fbf9f6;          /* warm off-white */
-  --muted: #6b6b63;
-  --wood: #a77a4a;        /* warm wood */
-  --deep: #153423;        /* pine green */
-  --card: #fff7ee;
-  --shadow: rgba(17,17,17,0.06);
-  --radius: 12px;
-  --gap: 14px;
+/* ===== Variables de base ===== */
+:root {
+  --background: #ffffff;
+  --text: #222222;
+  --accent: #555555;
+  --transition: 0.3s ease-in-out;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background:var(--bg);
-  color:#222;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.45;
+/* ===== Global ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.container{
-  max-width:1000px;
-  margin:0 auto;
-  padding:24px;
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
 }
 
-/* header */
-.site-header{
-  border-bottom:1px solid rgba(0,0,0,0.04);
-  background: linear-gradient(180deg, rgba(255,255,255,0.9), transparent);
-  position:sticky;
-  top:0;
-  backdrop-filter: blur(4px);
-  z-index:10;
-}
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.site-title{
-  margin:0;
-  font-size:1.4rem;
-  letter-spacing:0.02em;
-  color:var(--deep);
-}
-.site-title a, .title-link { text-decoration:none; color:inherit; }
-.site-bio{
-  margin:6px 0 0 0;
-  color:var(--muted);
-  font-size:0.95rem;
+/* ===== Container ===== */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* nav */
-.main-nav{ display:flex; gap:12px; align-items:center; }
-.nav-link{
-  text-decoration:none;
-  color:var(--muted);
-  padding:6px 8px;
-  border-radius:8px;
-  font-size:0.95rem;
-}
-.nav-link:hover{ background:rgba(21,52,35,0.04); color:var(--deep) }
-
-/* gallery grid */
-.gallery-section{ padding:18px 0; }
-.grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--gap);
-}
-.grid-item{
-  position:relative;
-  border-radius:10px;
-  overflow:hidden;
-  background:var(--card);
-  box-shadow: 0 6px 18px var(--shadow);
-}
-.grid-item img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  aspect-ratio:1/1;
-  transition: transform .45s cubic-bezier(.2,.9,.2,1);
-}
-.grid-item:hover img{ transform: scale(1.03) }
-.overlay{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  opacity:0;
-  transition:opacity .18s ease;
-  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.18));
-}
-.grid-item:hover .overlay{ opacity:1 }
-.overlay-text{
-  color:white;
-  font-weight:600;
-  font-size:0.95rem;
-  padding:6px 10px;
-  border-radius:8px;
-  background: rgba(21,52,35,0.6);
+/* ===== Header ===== */
+.site-header {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
 }
 
-/* post page */
-.post-page{ padding:28px 0; }
-.post{
-  background: #fff;
-  border-radius:14px;
-  padding:18px;
-  box-shadow: 0 8px 24px rgba(17,17,17,0.06);
-}
-.back-link{
-  display:inline-block;
-  margin-bottom:12px;
-  color:var(--muted);
-  text-decoration:none;
-}
-.post-figure{ margin:0 }
-.post-image{
-  width:100%;
-  height:auto;
-  border-radius:10px;
-  display:block;
-  margin-bottom:14px;
-  box-shadow: 0 14px 30px rgba(17,17,17,0.06);
-}
-.post-caption h2{ margin:0 0 8px 0; color:var(--deep) }
-.meta{ color:var(--muted); font-size:0.9rem; margin-bottom:12px }
-.description{ font-size:1rem; color:#2b2b2b }
-
-/* footer */
-.site-footer{
-  margin-top:28px;
-  padding:20px 0;
-  color:var(--muted);
-  text-align:center;
-  font-size:0.9rem;
+.site-header .site-title a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.8rem;
 }
 
-/* responsive */
-@media (max-width: 900px){
-  .grid{ grid-template-columns: repeat(2, 1fr); }
-  .container{ padding:18px; }
+.site-header nav a {
+  text-decoration: none;
+  color: var(--accent);
+  margin-left: 1rem;
+  font-size: 1rem;
+  transition: color var(--transition);
 }
-@media (max-width: 520px){
-  .grid{ grid-template-columns: 1fr 1fr; gap:10px; }
-  .site-title{ font-size:1.1rem }
-  .site-bio{ font-size:0.9rem }
+
+.site-header nav a:hover {
+  color: var(--text);
+}
+
+/* Aligner le titre à gauche et le bouton Contact à droite */
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== Bio ===== */
+.bio {
+  margin-bottom: 2rem;
+}
+
+/* ===== Galerie ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card img {
+  width: 225px;
+  height: 225px;
+  object-fit: cover; /* recadre sans déformer */
+  border-radius: 8px;
+}
+
+.card:hover img {
+  transform: scale(1.03);
+}
+
+/* ===== Fade-in ===== */
+.fade-in, .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.reveal.visible, .fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Carrousel ===== */
+.carousel img,
+.carousel video {
+  max-width: 100%; /* s’adapte au container */
+  height: auto;    /* garde les proportions */
+  display: none;
+  border-radius: 8px;
+  object-fit: contain; /* ou 'cover' si tu veux remplissage */
+}
+
+
+.carousel img.active,
+.carousel video.active {
+  display: block;
+}
+
+/* boutons */
+.carousel button.prev,
+.carousel button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  z-index: 10;
+  transition: background var(--transition);
+}
+
+.carousel button.prev:hover,
+.carousel button.next:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.carousel button.prev {
+  left: 10px;
+}
+
+.carousel button.next {
+  right: 10px;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--accent);
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.9rem;
 }
