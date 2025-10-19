@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elliot Létourneau</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title"><a href="index.html">Elliot Létourneau</a></h1>
+      <nav>
+        <a href="elliot8oct@hotmail.com">Contact</a></nav>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- BIO -->
+    <section class="bio fade-in">
+      <h2>À propos de moi</h2>
+      <p><!-- Ton texte ici --></p>
+    </section>
+
+    <!-- GALERIE -->
+    <section class="gallery">
+      <a href="posts/post10.html" class="card reveal">
+        <img src="images/post10-1.jpg" alt="Post 10">
+      </a>
+      <a href="posts/post9.html" class="card reveal">
+        <img src="images/post9-1.jpg" alt="Post 9">
+      </a>
+      <a href="posts/post8.html" class="card reveal">
+        <img src="images/post8-1.jpg" alt="Post 8">
+      </a>
+      <a href="posts/post7.html" class="card reveal">
+        <img src="images/post7-1.jpg" alt="Post 7">
+      </a>
+      <a href="posts/post6.html" class="card reveal">
+        <img src="images/post6-1.jpg" alt="Post 6">
+      </a>
+      <a href="posts/post5.html" class="card reveal">
+        <img src="images/post5-1.jpg" alt="Post 5">
+      </a>
+      <a href="posts/post4.html" class="card reveal">
+        <img src="images/post4-1.jpg" alt="Post 4">
+      </a>
+      <a href="posts/post3.html" class="card reveal">
+        <img src="images/post3-1.jpg" alt="Post 3">
+      </a>
+      <a href="posts/post2.html" class="card reveal">
+        <img src="images/post2-1.jpg" alt="Post 2">
+      </a>
+      <a href="posts/post1.html" class="card reveal">
+        <img src="images/post1-1.jpg" alt="Post 1">
+      </a>
+
+
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Elliot Létourneau</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.addEventListener("scroll", () => {
+      document.querySelectorAll(".reveal").forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add("visible");
+        }
+      });
+    });
+
+    document.querySelectorAll(".reveal").forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add("visible");
+      }
+    });
+  </script>
+</body>
+</html>
