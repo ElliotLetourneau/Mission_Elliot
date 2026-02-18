@@ -3,7 +3,7 @@
 Site portfolio personnel présentant mes projets et créations.  
 Accessible en ligne via GitHub Pages.
 
-🔗 **[Voir le site](https://elliotletourneau.github.io)** *(remplace par ton URL GitHub Pages)*
+🔗 **[Voir le site](https://elliotletourneau.github.io/Mission_Elliot/)** 
 
 ---
 
